@@ -11,3 +11,84 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  max-width: 1000px;
+  padding-top: 3rem;
+  margin: 3rem
+}
+
+.blocks {
+  display: flex;
+}
+
+.blocks div {
+  margin-right: 5rem;
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px; 
+}
+
+.square.blue {
+  background: cornflowerblue;
+}
+
+.square.orange {
+  background: coral;
+}
+
+@keyframes square {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px); 
+  }
+  25% {
+    transform: translateX(100px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(50px);
+  }
+  75% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Transition */
+
+.square.entering {
+  animation: square 2000ms ease-out forwards;
+}
+
+.square.exiting {
+  animation: square 2000ms ease-in-out alternate-reverse ;
+}
+
+/* CSSTransition */
+
+.os-enter {
+  opacity: 0;
+}
+
+.os-enter-active {
+  opacity: 1;
+  transition: opacity 1s ;
+}
+
+.os-exit {
+  opacity: 1;
+}
+
+.os-exit-active {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
