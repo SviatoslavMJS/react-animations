@@ -3,7 +3,7 @@ import { Transition, CSSTransition } from "react-transition-group";
 import { List } from "./List";
 
 
-function App() {
+export default function App() {
   const [toggle, setToggle] = useState(true)
   const [toggle2, setToggle2] = useState(true)
   const [items, setItems] = useState([
@@ -17,10 +17,10 @@ function App() {
   }
 
   const newTitle = () => {
-    setItems(items.concat({
-      id: Date.now(),
-      text: prompt("Enter title")
-    }))
+    const id = Date.now()
+    const text = prompt("Enter title")
+
+    setItems(items.concat({ id, text }))
   }
 
   return (
@@ -48,21 +48,14 @@ function App() {
           mountOnEnter
           unmountOnExit
           classNames={"os"}
-          onEnter={() => console.log("onEnter")}
-          onEntering={() => console.log("onEntering")}
-          onEntered={() => console.log("onEntered")}
-          onExit={() => console.log("onExit")}
-          onExiting={() => console.log("onExiting")}
-          onExited={() => console.log("onExited")}
         >
           <div className={`square orange`}>{toggle2.toString()}</div>
         </CSSTransition>
-
-        <List items={items} removeItem={removeItem} />
-
       </div>
+
+      <List items={items} removeItem={removeItem} />
+
     </div>
   );
 }
 
-export default App;

@@ -42,26 +42,6 @@ code {
   background: coral;
 }
 
-@keyframes square {
-  0% {
-    opacity: 0;
-    transform: translateY(-100px); 
-  }
-  25% {
-    transform: translateX(100px);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(50px);
-  }
-  75% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
 /* Transition */
 
 .square.entering {
@@ -90,5 +70,25 @@ code {
 .os-exit-active {
   opacity: 0;
   transition: opacity 1s;
+}
+
+@keyframes square {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px); 
+  }
+  25% {
+    transform: translateX(100px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(50px);
+  }
+  75% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 

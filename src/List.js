@@ -1,7 +1,7 @@
 import { CSSTransition, TransitionGroup } from "react-transition-group"
 
 
-export const List = ({ items, onRemove }) => {
+export const List = ({ items, removeItem }) => {
     return (
         <TransitionGroup
             component={"ul"}
@@ -12,7 +12,7 @@ export const List = ({ items, onRemove }) => {
                     classNames={"os"}
                     timeout={2000}
                 >
-                    <li onClick={() => onRemove(item.id)}>{item.text}</li>
+                    <li onClick={() => removeItem(item.id)}>{item.text}</li>
                 </CSSTransition>
               ))
             }
